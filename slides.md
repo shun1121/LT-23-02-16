@@ -25,385 +25,270 @@ transition: slide-left
 css: unocss
 ---
 
-# Welcome to Slidev
-
-Presentation slides for developers
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+# デスクワーク中の姿勢、<br>見直してみませんか？
+Shunsuke Fukunishi
 
 ---
 transition: fade-out
 ---
 
-# What is Slidev?
+# 目次
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
+- 背景
+- 体の不調の原因①
+- 体の不調の原因②
+- 改善方法
+- 実践していること
+- 使用しているもの
+- 参考
 
 <style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
+  ul {
+    margin-top: 40px;
+    font-size: 24px;
+  }
 </style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
 ---
 
-# Navigation
+# 背景
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+デスクワークの際、悪い姿勢で作業していたことで体の調子が悪くなった
 
-### Keyboard Shortcuts
+<div class="flex">
+  <div class="left">
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+  <v-clicks>
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+  - 肩こり
 
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
+  - 背中の痛み
 
-# Code
+  - 吐き気
 
-Use code snippets and get the highlighting directly![^1]
+  </v-clicks>
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+  </div>
+  <div v-click="1">
+    <img border="rounded" src="/posture.jpg" width="360">
+  </div>
+</div>
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
+.slidev-layout {
+  font-size: 24px;
 }
-.footnotes {
-  @apply text-sm opacity-75;
+.flex {
+  display: flex;
+  margin-left: 28px;
 }
-.footnote-backref {
-  display: none;
+.left {
+  width: 300px;
+}
+.slidev-layout h1 {
+  margin-bottom: 40px;
+}
+.slidev-layout h1 + p {
+  margin-top: -0.5rem;
+  margin-bottom: 2rem;
+  opacity: 1;
+}
+.slidev-layout ul {
+  padding-top: 20px;
+}
+.slidev-layout li {
+  padding-top: 12px;
 }
 </style>
 
 ---
 
-# Components
+# 体の不調の原因①
 
-<div grid="~ cols-2 gap-4">
-<div>
+<div class="flex">
+  <div class="left">
 
-You can use Vue components directly inside your slides.
+  <v-clicks>
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+  - 前屈みになって、顔が突き出た姿勢になっていた
 
-```html
-<Counter :count="10" />
-```
+  ↓<br>
+  頭の重量は4~6kgあり、頭が前に出る姿勢だとその重量を支える負担がより大きくなる
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+  ↓<br>
+  僧帽筋、肩甲挙筋、菱形筋といった肩甲骨周りの筋肉が硬くなる
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+  </v-clicks>
 
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
+  </div>
+  <div v-click="3">
+    <img border="rounded" src="/muscle.jpg" width="480">
+  </div>
 </div>
 
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
+<style>
+  .left {
+    width: 480px;
+    margin-right: 40px;
+  }
+  ul {
+    margin-top: 40px;
+  }
+</style>
 
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
+---
+
+# 体の不調の原因②
+
+<div class="flex">
+  <div class="left">
+  
+  <v-clicks>
+
+  - 前屈みになっており、呼吸が浅くなっていた
+
+  ↓<br>
+  猫背や前かがみの姿勢は肺を圧迫し、息を深く吐いたり吸ったりできなくなる
+
+  ↓<br>
+  軽い酸欠状態になる
+
+  </v-clicks>
+
+  </div>
+  <div v-click="1">
+    <img border="rounded" src="/posture.jpg" width="480">
+  </div>
 </div>
--->
 
+<style>
+  .left {
+    width: 480px;
+    margin-right: 40px;
+  }
+  ul {
+    margin-top: 40px;
+  }
+</style>
 
 ---
 class: px-20
 ---
 
-# Themes
+# 改善方法
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+<div class="flex">
+  <div class="left">
 
-<div grid="~ cols-2 gap-2" m="-t-2">
+  - 椅子に深く腰掛ける
+  - 足裏全体を床につける、足が床につかない場合は足台を利用する
+  - 目からディスプレイまでの距離は40㎝以上確保する
+  - ディスプレイの上端は、目の高さより低くする
+  - 肘の屈曲角度は90°以上にする
+  - 手首や前腕を載せられる机のスペースやひじ掛けを確保する
+  - 背筋を伸ばすストレッチ、腰をひねるストレッチ
 
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
   </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
+  <div>
+    <img border="rounded" src="/right-posture.jpg" width="480">
   </div>
 </div>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
+<style>
+  .left {
+    width: 480px;
+    margin-right: 40px;
   }
-}
-</script>
+  ul {
+    margin-top: 20px;
+  }
+  li {
+    margin-top: 8px;
+  }
+</style>
 
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
+---
 
-[Learn More](https://sli.dev/guide/animations.html#motion)
+# 実践していること
+
+<div class="flex">
+  <div class="left">
+
+  - 足台の使用
+  - クッションの利用
+  - 外部キーボードの利用
+  - ノートパソコン用の台を使用
+  - ディスプレイの上端を目線のやや上に固定
+
+  </div>
+  <div class="right">
+    <img border="rounded" src="/my-posture.jpg" width="200">
+    <img border="rounded" src="/desk2.jpg" width="200">
+  </div>
+</div>
+
+<style>
+  .left {
+    width: 480px;
+    margin-right: 40px;
+  }
+  ul {
+    margin-top: 40px;
+  }
+  li {
+    margin-top: 16px;
+  }
+  img {
+    margin-bottom: 20px;
+  }
+</style>
+
+---
+
+# 使用しているもの
+
+<div class="img-wrapper">
+  <img border="rounded" src="/book-stand.jpg" width="200" height="auto">
+  <img border="rounded" src="/cushion.jpg" width="200" height="auto">
+  <img border="rounded" src="/foot-rest.jpg" width="200" height="auto">
+  <img border="rounded" src="/hhkb.jpeg" width="200" height="auto">
+</div>
+
+<div>
+
+  - https://amzn.asia/d/c4ZkaA9
+  - https://amzn.asia/d/98DsFjq
+  - https://amzn.asia/d/5c0Q2mb
+  - https://www.amazon.co.jp/HHKB-Professional-HYBRID-Type-S-%E8%8B%B1%E8%AA%9E%E9%85%8D%E5%88%97%EF%BC%8F%E7%99%BD/dp/B082TQK2SB?ref_=ast_sto_dp&th=1&psc=1
 
 </div>
 
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
+<style>
+  .img-wrapper {
+    display: flex;
   }
-  frame "Foo" {
-    [Frame 4]
+</style>
+
+---
+
+# 参考
+
+- https://www.mediaid-online.jp/clinic_notes/information/403
+- https://jin-chiryouin.com/blog2/874/
+- https://style.nikkei.com/article/DGXKZO42760450S9A320C1W10600/
+- https://www.office-com.jp/gimon/office-tips/office_sitting.html#content2-1
+
+
+---
+
+ご静聴ありがとうございました！
+
+<style>
+  p {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   font-size: 32px;
   }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+</style>
